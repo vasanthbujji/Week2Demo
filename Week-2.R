@@ -18,3 +18,16 @@ length(z)
 sum(z)
 prod(z)
 range(z)
+
+mean(z)
+var(z)
+sort(z)
+sorted_z<-sort(z)
+class(sorted_z)
+typeof(sorted_z)
+help("sort")
+z
+sorted_z1<-sort(z, decreasing = FALSE)
+sorted_z2<-sort(z, decreasing = TRUE)
+sorted_z1
+sorted_z2
