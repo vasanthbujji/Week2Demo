@@ -70,3 +70,12 @@ s5
 s6<-rep(x,each=5)
 s6
 help("rep")
+
+is.na(seq3)
+
+z<-c(1:3,NA)
+result<-is.na(z)
+result
+
+p==NA
+is.na(p)
