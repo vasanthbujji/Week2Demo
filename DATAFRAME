@@ -138,6 +138,45 @@ Manager_data
 
 column_summary<-colSums(Manager_data[,c(4:9,11,12)],na.rm=TRUE)
 column_summary
+complete_data<-complete.cases(Manager_data)
+complete_data
+
+sum(complete_data)
+
+complete_rows <- Manager_data[complete.cases(Manager_data), ]
+complete_rows
+nrow(Manager_data)
+
+
+#rows with missing values
+missing_rows <- Manager_data[rowSums(is.na(Manager_data)) > 0, ]
+missing_rows
+
+is.na(Manager_data$Age)
+sum(is.na(Manager_data$Age))
+
+mean(is.na(Manager_data$Age))
+mean(!complete.cases(Manager_data))
+
+install.packages("mice")
+library(mice)
+md.pattern(Manager_data)
+Manager_data
+
+install.packages("VIM")
+library(VIM)
+missing_values<-aggr(Manager_data,prop=FALSE, numbers=TRUE)
+summary(missing_values)
+
+matrixplot(Manager_data)
+
+missing_values<-as.data.frame(abs(is.na(Manager_data)))
+head(missing_values)
+
+correlation_matrix<-Manager_data[(apply(Manager_data,2,sum)>0)]
+correlation_matrix
+cor(correlation_matrix)
+
 
 
 
